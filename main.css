@@ -3,6 +3,7 @@
 body {
   overflow-x: hidden;
   font-family: "Oswald", sans-serif;
+  height: 2000px;
 }
 * {
   margin: 0;
@@ -16,12 +17,13 @@ video {
 }
 @media (max-width: 720px) {
   video {
-    transform: translateX(-25%) rotateY(180deg);
+    transform: translateX(-3%);
     width: 150%;
   }
   .jumbotron .jumbotron__content {
-    width: 90%;
+    width: 100%;
     height: 100%;
+    margin: 0;
     justify-content: center;
     text-align: center;
   }
@@ -29,9 +31,13 @@ video {
     align-self: center;
   }
   .jumbotron .jumbotron__content__title {
+    margin: 5%;
+
     font-size: 2.5rem;
   }
   .jumbotron .jumbotron__content__caption {
+    margin: 10%;
+
     font-size: 1.3rem;
   }
   .jumbotron__content__button {
@@ -61,13 +67,17 @@ video {
   /* display: flex; */
 }
 .jumbotron__content {
-  margin: 10% 0 0 5%;
+  pointer-events: none;
+  margin: 15% 0 0 10%;
   display: flex;
   flex-direction: column;
   width: 50%;
   position: absolute;
   z-index: 1000;
   color: white;
+}
+.jumbotron__content * {
+  pointer-events: auto;
 }
 .jumbotron__content__title {
   text-transform: uppercase;
@@ -99,9 +109,9 @@ video {
 }
 
 button:hover {
-  border: 2px solid red;
+  border: 2px solid #eb6242;
 
-  background-color: red;
+  background-color: #eb6242;
 
   cursor: pointer;
 }
@@ -112,4 +122,41 @@ button:hover i {
 i {
   transition: 0.5s ease;
   margin-left: 10px;
+}
+.navbar {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 5;
+  position: absolute;
+}
+.nav-item {
+  cursor: pointer;
+  font-size: 2.1rem;
+  margin: 2rem 2.5rem 2rem 2rem;
+}
+.nav-brand {
+  font-weight: 400;
+  color: #eb6242;
+}
+.nav-hamburger {
+  transform: scaleY(0.7) translateY(15%);
+  /* transform: scaleX(1.5) translateY(30%); */
+}
+
+.paint-hover {
+  display: inline-block;
+  color: #eb6242;
+  overflow: hidden;
+  background: linear-gradient(to right, #eb6242, #eb6242 50%, white 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+}
+.paint-hover:hover {
+  background-position: 0 100%;
 }

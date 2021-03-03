@@ -1,5 +1,10 @@
+let jumbotronWidth = document.querySelector(".jumbotron").clientWidth;
+let jumbotronHeight = document.querySelector(".jumbotron").clientHeight;
 
-let jumbotronWidth =document.querySelector(".jumbotron").clientWidth
+let lastScroll = 0;
+let videoTime = 0;
+
+let lastUpdate = null;
 function videoDimensions(video) {
   // Ratio of the video's intrisic dimensions
   var videoRatio = video.videoWidth / video.videoHeight;
@@ -24,8 +29,7 @@ overlayElement = document.querySelector(".overlay");
 window.addEventListener("resize", function (event) {
   videoHeight = videoDimensions(videoElement).height;
   overlayElement.style.height = videoHeight + "px";
-  console.log(videoHeight);
-  jumbotronWidth =document.querySelector(".jumbotron").clientWidth
+  jumbotronWidth = document.querySelector(".jumbotron").clientWidth;
 });
 
 videoElement.onloadeddata = function () {
@@ -34,7 +38,21 @@ videoElement.onloadeddata = function () {
 };
 
 function doSpin(event) {
-  const mouseX = event.clientX
-  console.log(mouseX/jumbotronWidth*60)
-  videoElement.currentTime = mouseX/jumbotronWidth*60
+  // const mouseX = event.clientX
+  // const newPosition = Math.round(mouseX/jumbotronWidth*60*10)/10
+  // if (newPosition !== lastUpdate) {
+  //   videoElement.currentTime = newPosition
+  // }
 }
+function capRange(number,min,max) {
+  if (number < min) return min
+  if (number > max) return max
+  return number
+}
+window.onscroll = () => {
+  scrollAmount = window.scrollY;
+  videoTime += capRange(Math.abs(scrollAmount - lastScroll)/2,0,5);
+  console.log(capRange(Math.abs(scrollAmount - lastScroll)/2,0,5))
+  lastScroll = scrollAmount;
+  videoElement.currentTime = (videoTime / jumbotronHeight) * 60 % 60;
+};
