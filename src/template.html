@@ -17,7 +17,7 @@
   <body>
     <nav class="navbar">
       <h1 class="nav-item nav-brand paint-hover">BRAND</h1>
-      <i class="nav-item nav-hamburger paint-hover fas fa-bars"></i>
+      <i id="hamburger-toggle" class="nav-item nav-hamburger paint-hover fas fa-bars"></i>
     </nav>
     <div class="jumbotron">
       <div class="jumbotron__content">
@@ -36,8 +36,15 @@
         </button>
       </div>
       <div class="overlay"></div>
-
-      <video autoplay muted loop>
+      <div class="hamburger">
+        <ul>
+          <li class="paint-hover">About</li>
+          <li class="paint-hover">Habitat</li>
+          <li class="paint-hover">Ecosystem</li>
+          <li class="paint-hover">Other</li>
+        </ul>
+      </div>
+      <video playsinline autoplay muted loop>
         <source src="./assets/hero-video.mp4" type="video/mp4" />
       </video>
     </div>

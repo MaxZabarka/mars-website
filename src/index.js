@@ -1,59 +1,25 @@
 import "./main.css"
+import "./videoGradient.js"
 let jumbotronWidth = document.querySelector(".jumbotron").clientWidth;
 let jumbotronHeight = document.querySelector(".jumbotron").clientHeight;
 
-let lastScroll = 0;
-let videoTime = 0;
+const videoElement = document.querySelector("video");
 
-let lastUpdate = null;
-function videoDimensions(video) {
-  // Ratio of the video's intrisic dimensions
-  var videoRatio = video.videoWidth / video.videoHeight;
-  // The width and height of the video element
-  var width = video.offsetWidth,
-    height = video.offsetHeight;
-  // The ratio of the element's width to its height
-  var elementRatio = width / height;
-  // If the video element is short and wide
-  if (elementRatio > videoRatio) width = height * videoRatio;
-  // It must be tall and thin, or exactly equal to the original ratio
-  else height = width / videoRatio;
-  return {
-    width: width,
-    height: height,
-  };
+
+let lastScrollPos = window.pageYOffset
+let currentScrollPos = lastScrollPos
+
+if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  const scrollSpeed = 60
+  const videoSpeed = 0.003
+  function scrollPlay() {
+    currentScrollPos = window.pageYOffset || document.documentElement.scrollTop
+    const difference = currentScrollPos - lastScrollPos
+    lastScrollPos = currentScrollPos
+
+    videoElement.currentTime = (videoElement.currentTime + (difference)/scrollSpeed + videoSpeed) % 60
+
+    window.requestAnimationFrame(scrollPlay)
+  }
+  window.requestAnimationFrame(scrollPlay)
 }
-
-videoElement = document.querySelector("video");
-overlayElement = document.querySelector(".overlay");
-
-window.addEventListener("resize", function (event) {
-  videoHeight = videoDimensions(videoElement).height;
-  overlayElement.style.height = videoHeight + "px";
-  jumbotronWidth = document.querySelector(".jumbotron").clientWidth;
-});
-
-videoElement.onloadeddata = function () {
-  videoHeight = videoDimensions(videoElement).height;
-  overlayElement.style.height = videoHeight + "px";
-};
-
-function doSpin(event) {
-  // const mouseX = event.clientX
-  // const newPosition = Math.round(mouseX/jumbotronWidth*60*10)/10
-  // if (newPosition !== lastUpdate) {
-  //   videoElement.currentTime = newPosition
-  // }
-}
-function capRange(number,min,max) {
-  if (number < min) return min
-  if (number > max) return max
-  return number
-}
-window.onscroll = () => {
-  scrollAmount = window.scrollY;
-  videoTime += capRange(Math.abs(scrollAmount - lastScroll)/2,0,5);
-  console.log(capRange(Math.abs(scrollAmount - lastScroll)/2,0,5))
-  lastScroll = scrollAmount;
-  videoElement.currentTime = (videoTime / jumbotronHeight) * 60 % 60;
-};

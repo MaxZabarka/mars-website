@@ -8,6 +8,8 @@ body {
   margin: 0;
 }
 video {
+  overflow-x: hidden;
+
   top: 0;
   width: 120%;
   max-height: 100vh;
@@ -30,13 +32,11 @@ video {
     align-self: center;
   }
   .jumbotron .jumbotron__content__title {
-    margin: 5%;
-
+    margin: 1rem 5%;
     font-size: 2.5rem;
   }
   .jumbotron .jumbotron__content__caption {
-    margin: 10%;
-
+    margin: 1rem 10%;
     font-size: 1.3rem;
   }
   .jumbotron__content__button {
@@ -80,7 +80,7 @@ video {
 }
 .jumbotron__content__title {
   text-transform: uppercase;
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 .jumbotron__content__divider {
   margin-top: 1rem;
@@ -91,7 +91,7 @@ video {
 .jumbotron__content__caption {
   margin-top: 1rem;
   font-weight: 300;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 .jumbotron__content__button {
   border: 2px solid white;
@@ -127,7 +127,7 @@ i {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  z-index: 5;
+  z-index: 10000;
   position: absolute;
 }
 .nav-item {
@@ -154,8 +154,33 @@ i {
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%;
   background-position: 100%;
-  transition: background-position 275ms ease;
+  transition: background-position 500ms ease;
 }
 .paint-hover:hover {
   background-position: 0 100%;
+}
+.hamburger {
+  z-index: 1000;
+  position: fixed;
+  background: black;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.hamburger ul {
+  display: flex;
+  flex-direction: column;
+  color:white;
+  list-style: none;
+  padding: 0;
+  margin: 10rem 25%;
+}
+.hamburger li {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
