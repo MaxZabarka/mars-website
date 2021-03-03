@@ -1,3 +1,4 @@
+import "./main.css"
 let jumbotronWidth = document.querySelector(".jumbotron").clientWidth;
 let jumbotronHeight = document.querySelector(".jumbotron").clientHeight;
 
