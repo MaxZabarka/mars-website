@@ -6,14 +6,13 @@ body {
 }
 * {
   margin: 0;
+
 }
 video {
-  overflow-x: hidden;
 
   top: 0;
   width: 120%;
   max-height: 100vh;
-  position: absolute;
   transform: rotateY(180deg) translateX(-5%);
 }
 @media (max-width: 720px) {
@@ -42,6 +41,19 @@ video {
   .jumbotron__content__button {
     align-self: center;
   }
+  #hamburger-menu ul {
+    align-items: flex-start;
+    margin: 0;
+    width: 100vw;
+    margin-top: 10vh;
+    height:90vh;
+    text-align: right;
+  }
+  #hamburger-menu li {
+    margin-left: 10%;
+    margin-top: 2rem;
+    font-size: 3rem;
+  }
 }
 
 .overlay {
@@ -60,10 +72,10 @@ video {
   max-height: 100vh;
 }
 .jumbotron {
+  overflow-x: hidden;
   width: 100vw;
   height: 100vh;
   background: black;
-  /* display: flex; */
 }
 .jumbotron__content {
   pointer-events: none;
@@ -138,12 +150,12 @@ i {
   margin: 2rem 2.5rem 2rem 2rem;
 }
 .nav-brand {
-  font-weight: 400;
+  letter-spacing: 0.1em;
+  font-weight: 700;
   color: #eb6242;
 }
 .nav-hamburger {
   transform: scaleY(0.7) translateY(15%);
-  /* transform: scaleX(1.5) translateY(30%); */
 }
 
 .paint-hover {
@@ -171,7 +183,7 @@ i {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  transition: 0.5s ease all;
+  transition: 0.5s ease opacity;
 
 }
 .hamburger-closed {
@@ -182,7 +194,7 @@ i {
   transform: translateY(-100px);
 }
 .hamburger ul {
-  transition: 0.5s ease all;
+  transition: 0.5s ease transform;
 
   display: flex;
   flex-direction: column;
@@ -195,5 +207,5 @@ i {
   cursor: pointer;
   text-transform: uppercase;
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 400;
 }
