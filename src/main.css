@@ -20,6 +20,13 @@ video {
     transform: translateX(-3%);
     width: 150%;
   }
+  .navbar .nav-brand {
+    font-size: 1.5rem;
+  }
+  .navbar .nav-item {
+    margin: 1rem;
+  }
+
   .jumbotron .jumbotron__content {
     width: 100%;
     height: 100%;
@@ -32,11 +39,11 @@ video {
   }
   .jumbotron .jumbotron__content__title {
     margin: 1rem 5%;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .jumbotron .jumbotron__content__caption {
     margin: 1rem 10%;
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   .jumbotron__content__button {
     align-self: center;
@@ -54,6 +61,12 @@ video {
     margin-top: 2rem;
     font-size: 3rem;
   }
+  .navbar #nav-icon4.nav-item {
+
+    transform: scale(0.5) translateY(-0.4rem);
+  }
+
+
 }
 
 .overlay {
@@ -147,15 +160,15 @@ i {
 .nav-item {
   cursor: pointer;
   font-size: 2.1rem;
-  margin: 2rem 2.5rem 2rem 2rem;
+  margin: 2rem;
 }
 .nav-brand {
   letter-spacing: 0.1em;
   font-weight: 700;
   color: #eb6242;
 }
-.nav-hamburger {
-  transform: scaleY(0.7) translateY(15%);
+.navbar #nav-icon4 {
+  transform: scale(0.8);
 }
 
 .paint-hover {
