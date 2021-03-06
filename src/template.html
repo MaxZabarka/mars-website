@@ -14,37 +14,57 @@
     <meta charset="utf-8" />
     <title></title>
   </head>
-  <body>
+  <body class="preload">
+    <script type="text/javascript">
+      //
+    </script>
     <nav class="navbar">
       <h1 class="nav-item nav-brand paint-hover">BRAND</h1>
       <div id="nav-icon4" class="nav-item">
-      <span ></span>
-      <span ></span>
-      <span ></span>
-    </div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
     <h1 id="test"></h1>
     <div class="jumbotron">
       <div class="jumbotron__content">
-        <h1 class="jumbotron__content__title">
+        <h1
+          data-sal="slide-up"
+          data-sal-delay="300"
+          data-sal-easing="easeOutQuart"
+          class="jumbotron__content__title"
+        >
           Next Level Exploration and Design
         </h1>
-        <div class="jumbotron__content__divider"></div>
-        <p class="jumbotron__content__caption">
+        <div
+          data-sal="slide-up"
+          data-sal-delay="500"
+          data-sal-easing="easeOutQuart"
+          class="jumbotron__content__divider"
+        ></div>
+        <p
+          data-sal="slide-up"
+          data-sal-delay="700"
+          data-sal-easing="easeOutQuart"
+          class="jumbotron__content__caption"
+        >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam
         </p>
-        <button type="button" class="jumbotron__content__button">
+        <button
+          data-sal="slide-up"
+          data-sal-delay="900"
+          data-sal-easing="easeOutQuart"
+          type="button"
+          class="jumbotron__content__button"
+        >
           GET STARTED
           <i class="fas fa-chevron-right"></i>
         </button>
       </div>
       <div class="overlay"></div>
-
-      <video disableRemotePlayback  playsinline autoplay muted loop>
-        <source src="./assets/hero-video.mp4" type="video/mp4" />
-      </video>
     </div>
     <div id="hamburger-menu" class="hamburger hamburger-closed">
       <ul>
@@ -54,7 +74,19 @@
         <li class="paint-hover">Other</li>
       </ul>
     </div>
+    <div class="animate-bars animate"></div>
+    <div class="animate-bars animate-bottom"></div>
   </body>
 
-  <h1 class="paint-hover">Hello!</h1>
+  <h1
+  data-sal-repeat
+    data-sal="slide-right"
+    data-sal-delay="0"
+    data-sal-duration="1000"
+    data-sal-easing="easeOutQuart"
+    style="font-size: 5rem;
+     text-align: center;"
+  >
+    Hello!
+  </h1>
 </html>

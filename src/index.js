@@ -1,6 +1,5 @@
-import "./main.css"
+import "./main.scss"
 import "./hamburger-icon.css"
-
-import "./videoGradient.js"
+import "./scroll-animations"
 import "./hamburger.js"
 import "./background-scroll.js"

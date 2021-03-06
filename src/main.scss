@@ -1,15 +1,17 @@
+$sal-slide-offset: 150px;
+$sal-animation-duration: 2s !default;
 
+@import "../node_modules/sal.js/src/sal.scss";
 body {
   overflow-x: hidden;
   font-family: "Oswald", sans-serif;
   height: 2000px;
 }
+
 * {
   margin: 0;
-
 }
 video {
-
   top: 0;
   width: 120%;
   max-height: 100vh;
@@ -38,11 +40,11 @@ video {
     align-self: center;
   }
   .jumbotron .jumbotron__content__title {
-    margin: 1rem 5%;
+    margin: 1rem 0;
     font-size: 2rem;
   }
   .jumbotron .jumbotron__content__caption {
-    margin: 1rem 10%;
+    margin: 1rem 0;
     font-size: 1rem;
   }
   .jumbotron__content__button {
@@ -53,7 +55,7 @@ video {
     margin: 0;
     width: 100vw;
     margin-top: 10vh;
-    height:90vh;
+    height: 90vh;
     text-align: right;
   }
   #hamburger-menu li {
@@ -62,11 +64,8 @@ video {
     font-size: 3rem;
   }
   .navbar #nav-icon4.nav-item {
-
     transform: scale(0.5) translateY(-0.4rem);
   }
-
-
 }
 
 .overlay {
@@ -85,10 +84,21 @@ video {
   max-height: 100vh;
 }
 .jumbotron {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 80%
+    ),
+    url("./assets/mars-background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 70% top;
   overflow-x: hidden;
+
   width: 100vw;
   height: 100vh;
-  background: black;
+  /* background: black; */
 }
 .jumbotron__content {
   pointer-events: none;
@@ -130,23 +140,20 @@ video {
   font-weight: 400;
   font-size: 1.3rem;
   max-width: 200px;
-
-  transition: 0.5s ease;
-}
-
-button:hover {
-  border: 2px solid #eb6242;
-
-  background-color: #eb6242;
-
   cursor: pointer;
+
+  // transition: opacity 2s ease 0.9s, transform 2s ease 0.9s;
 }
-button:hover i {
-  transition: 0.5s ease;
+
+.jumbotron__content__button:hover {
+  border: 2px solid #eb6242;
+  background-color: #eb6242;
+}
+.jumbotron__content__button:hover i {
   transform: rotateZ(90deg);
 }
 i {
-  transition: 0.5s ease;
+  transition: 0.5s ease transform;
   margin-left: 10px;
 }
 .navbar {
@@ -172,16 +179,16 @@ i {
 }
 
 .paint-hover {
-  display: inline-block ;
-  color: #eb6242 ;
-  overflow: hidden ;
-  background: linear-gradient(to right, #eb6242, #eb6242 50%, white 50%) ;
-  background-clip: text ;
-  -webkit-background-clip: text ;
-  -webkit-text-fill-color: transparent ;
-  background-size: 200% 100% ;
-  background-position: 100% ;
-  transition: background-position 500ms ease ;
+  display: inline-block;
+  color: #eb6242;
+  overflow: hidden;
+  background: linear-gradient(to right, #eb6242, #eb6242 50%, white 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 500ms ease;
 }
 .paint-hover:hover {
   background-position: 0 100%;
@@ -192,12 +199,11 @@ i {
   background: black;
   width: 100vw;
   height: 100vh;
-  top:0;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   transition: 0.5s ease opacity;
-
 }
 .hamburger-closed {
   pointer-events: none;
@@ -211,7 +217,7 @@ i {
 
   display: flex;
   flex-direction: column;
-  color:white;
+  color: white;
   list-style: none;
   padding: 0;
   margin: 10rem 25%;
@@ -221,4 +227,12 @@ i {
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
+}
+
+.animate-bars {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 10000000;
 }
