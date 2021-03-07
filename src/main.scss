@@ -2,12 +2,21 @@ $sal-slide-offset: 150px;
 $sal-animation-duration: 2s !default;
 
 @import "../node_modules/sal.js/src/sal.scss";
-body {
-  overflow-x: hidden;
-  font-family: "Oswald", sans-serif;
-  height: 2000px;
-}
 
+body {
+  height: 2000px;
+  background: grey;
+  overflow: hidden;
+  font-family: "Oswald", sans-serif;
+}
+.parallax-wrapper {
+  /* Fill the available space */
+  height: 100vh;
+  /* Make the children of the element closer to the viewport */
+  perspective: 2px;
+  /* Hide the overflow */
+  overflow-x: hidden;
+}
 * {
   margin: 0;
 }
@@ -84,21 +93,8 @@ video {
   max-height: 100vh;
 }
 .jumbotron {
-  background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.8) 0%,
-      rgba(0, 0, 0, 0) 80%
-    ),
-    url("./assets/mars-background.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 70% top;
-  overflow-x: hidden;
-
   width: 100vw;
   height: 100vh;
-  /* background: black; */
 }
 .jumbotron__content {
   pointer-events: none;
@@ -141,8 +137,6 @@ video {
   font-size: 1.3rem;
   max-width: 200px;
   cursor: pointer;
-
-  // transition: opacity 2s ease 0.9s, transform 2s ease 0.9s;
 }
 
 .jumbotron__content__button:hover {
@@ -157,12 +151,13 @@ i {
   margin-left: 10px;
 }
 .navbar {
+  position: fixed;
+  top: 0;
   color: white;
   display: flex;
   justify-content: space-between;
   width: 100%;
   z-index: 10000;
-  position: absolute;
 }
 .nav-item {
   cursor: pointer;
@@ -214,7 +209,6 @@ i {
 }
 .hamburger ul {
   transition: 0.5s ease transform;
-
   display: flex;
   flex-direction: column;
   color: white;
@@ -231,8 +225,58 @@ i {
 
 .animate-bars {
   position: fixed;
+  top: 0;
   width: 100vw;
-  height: 100vh;
-  background: black;
+  height: 51vh;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 1);
   z-index: 10000000;
+  transition: 2s height;
+}
+.animate-bottom {
+  top: auto;
+  bottom: 0;
+}
+
+.slide-open {
+  height: 0;
+}
+.background {
+  // position: absolute;
+  // top: 0;
+  // background-image: linear-gradient(
+  //     0deg,
+  //     rgba(0, 0, 0, 0.8) 0%,
+  //     rgba(0, 0, 0, 0) 80%
+  //   ),
+  //   url("./assets/mars-background.jpg");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: 70% top;
+  // width: 100vw;
+  // height: 200vh;
+  // transform: translateZ(-1px) scale(1.7);
+  /* Position the pseudo-element to fill the parent */
+  /* Position the pseudo-element to fill the parent */
+  /* Position the pseudo-element to fill the parent */
+  content: '';
+  position: absolute !important;
+  top: 0;
+  right: 0;
+
+
+  /* Scale the image to full */
+  background-size: cover;
+
+  /* Move the element back then scale the element, it helps to appears more slowly */
+  transform: translateZ(-1px) scale(1.7);
+
+  /* Set the parallax section before the other elements. */
+  // z-index: -1;
+    background-image: url(https://source.unsplash.com/vs6a4EHj_Ro/1600x900);
+  position: relative;
+  top:0;
+  height: 200vh;
+  width:100vw;
+
 }
