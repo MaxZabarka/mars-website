@@ -6,7 +6,7 @@ $sal-animation-duration: 2s !default;
 body {
   height: 2000px;
   background: grey;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: "Oswald", sans-serif;
 }
 .parallax-wrapper {
@@ -259,11 +259,10 @@ i {
   /* Position the pseudo-element to fill the parent */
   /* Position the pseudo-element to fill the parent */
   /* Position the pseudo-element to fill the parent */
-  content: '';
+  content: "";
   position: absolute !important;
   top: 0;
   right: 0;
-
 
   /* Scale the image to full */
   background-size: cover;
@@ -272,11 +271,10 @@ i {
   transform: translateZ(-1px) scale(1.7);
 
   /* Set the parallax section before the other elements. */
-  // z-index: -1;
-    background-image: url(https://source.unsplash.com/vs6a4EHj_Ro/1600x900);
+  z-index: -1;
+  background-image: url(./assets/mars-background.jpg);
   position: relative;
-  top:0;
+  top: 0;
   height: 200vh;
-  width:100vw;
-
+  width: 100vw;
 }
