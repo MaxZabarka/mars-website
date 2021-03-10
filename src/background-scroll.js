@@ -1,18 +1,17 @@
+const planetElement = document.querySelector(".planet-wrapper")
 
-if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-  const videoElement = document.querySelector("video");
+const backgroundElement = document.querySelector(".background")
+const getScrollMaxY = () => {
+  return window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+}
+window.addEventListener("scroll", () => {
+  requestAnimationFrame(updateParallax)
+})
+const updateParallax = () =>  {
+  // document.body.style.backgroundPosition = "center "+ window.scrollY/ getScrollMaxY()*100+"%"
+  planetElement.style.top = "-"+window.scrollY/ getScrollMaxY()*500+"px"
+  backgroundElement.style.top = "-"+window.scrollY/ getScrollMaxY()*300+"px"
 
-  let lastScrollPos = window.scrollY
-  let currentScrollPos = lastScrollPos
-
-  const scrollSpeed = 100
-  const videoSpeed = 0.003
-  function scrollPlay() {
-    currentScrollPos = window.scrollY || document.documentElement.scrollTop
-    const difference = currentScrollPos - lastScrollPos
-    lastScrollPos = currentScrollPos
-    videoElement.currentTime = (videoElement.currentTime + (difference)/scrollSpeed + videoSpeed) % 60
-    window.requestAnimationFrame(scrollPlay)
-  }
-  window.requestAnimationFrame(scrollPlay)
+  console.log(window.scrollY/ getScrollMaxY());
+  // requestAnimationFrame(updateParallax)
 }
