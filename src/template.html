@@ -11,8 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
     <meta charset="utf-8" />
-    <title></title>
+    <title>Mars Colony</title>
   </head>
   <body class="preload">
     <div class="planet-wrapper">
@@ -23,7 +25,7 @@
       //
     </script>
     <nav class="navbar">
-      <h1 class="nav-item nav-brand paint-hover">BRAND</h1>
+      <h1 class="nav-item nav-brand paint-hover"><a href="#title">BRAND</a></h1>
       <div id="nav-icon4" class="nav-item">
         <span></span>
         <span></span>
@@ -31,14 +33,14 @@
       </div>
     </nav>
     <div class="jumbotron">
-      <div class="jumbotron__content">
+      <div class="jumbotron__content" id="title">
         <h1
           data-sal="slide-up"
           data-sal-delay="300"
           data-sal-easing="easeOutQuart"
           class="jumbotron__content__title"
         >
-          Next Level Exploration and Design
+          United Innovators
         </h1>
         <div
           data-sal="slide-up"
@@ -52,10 +54,9 @@
           data-sal-easing="easeOutQuart"
           class="jumbotron__content__caption"
         >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam
+          Next level exploration and innovation. Over millions of miles, we have a vision and a team that will bring it to life.
         </p>
+        <a href="#core-values">
         <button
           data-sal="slide-up"
           data-sal-delay="900"
@@ -66,32 +67,59 @@
           GET STARTED
           <i class="fas fa-chevron-right"></i>
         </button>
+        </a>
       </div>
     </div>
 
     <div id="hamburger-menu" class="hamburger hamburger-closed">
       <ul>
-        <li class="paint-hover">About</li>
-        <li class="paint-hover">Habitat</li>
-        <li class="paint-hover">Ecosystem</li>
-        <li class="paint-hover">Other</li>
+        <li class="paint-hover"><a href="#core-values">Core Values</a></li>
+        <li class="paint-hover"><a href="#core-values">Government</a></li>
+        <li class="paint-hover"><a href="#core-values">Justice</a></li>
+        <li class="paint-hover"><a href="#core-values">Immigraton</a></li>
       </ul>
     </div>
     <div id="slide-top" class="animate-bars animate"></div>
     <div id="slide-bottom" class="animate-bars animate-bottom"></div>
   </body>
 
-  <h1
-    data-sal-repeat
-    data-sal="slide-right"
-    data-sal-delay="0"
-    data-sal-duration="1000"
-    data-sal-easing="easeOutQuart"
-    style="font-size: 5rem; text-align: center;"
-  >
-    Hello!
-  </h1>
-  <h1 style="font-size: 5rem; text-align: center;">
-    Hello!
-  </h1>
-</html>
+  <div
+  data-sal="slide-right"
+  data-sal-delay="200"
+  data-sal-duration="1500"
+  data-sal-easing="easeOutQuart" class="icons-wrapper scroll-padding" ><span id="core-values"></span>
+    <h1>Our Core Values</h1>
+
+    <div class="icons">
+      <div class="icon">
+        <img class="icon__image" src="./assets/icons/cooperation.svg"></img>
+        <img class="icon__hexagon" src="./assets/icons/hexagon.svg"></img>
+      <h2 class="icon__label">Cooperation</h2>
+      </div>
+    
+      <div class="icon">
+        <img class="icon__image" src="./assets/icons/intel.svg"></img>
+        <img class="icon__hexagon" src="./assets/icons/hexagon.svg"></img>
+      <h2 class="icon__label">Intelligence</h2>
+      </div>
+    
+      <div class="icon">
+        <img class="icon__image" src="./assets/icons/efficiency.svg"></img>
+        <img class="icon__hexagon" src="./assets/icons/hexagon.svg"></img>
+      <h2 class="icon__label">Efficiency</h2>
+      </div>
+    
+      <div class="icon">
+        <img class="icon__image" src="./assets/icons/innovation.svg"></img>
+        <img class="icon__hexagon" src="./assets/icons/hexagon.svg"></img>
+      <h2 class="icon__label">Innovation</h2>
+      </div>
+    
+    </div>
+  </div>
+
+
+  <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/tomas-knop" title="Tomas Knop">Tomas Knop</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+  <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+  </html>

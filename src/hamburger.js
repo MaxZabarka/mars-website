@@ -5,3 +5,11 @@ hamburgerToggleElement.addEventListener("click", () => {
   hamburgerToggleElement.classList.toggle("open")
   hamburgerMenuElement.classList.toggle("hamburger-closed")
 })
+for (listElement of hamburgerMenuElement.getElementsByTagName("li")) {
+  listElement.addEventListener("click", () => {
+    hamburgerToggleElement.classList.toggle("open")
+    hamburgerMenuElement.classList.toggle("hamburger-closed")
+
+    console.log("clicked");
+  })
+}
