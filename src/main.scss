@@ -293,10 +293,13 @@ i {
 }
 .icons-wrapper {
 	min-height:100vh;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
 	h1 {
 		text-transform: uppercase;
 		margin-bottom:3rem;
-		margin-top:3rem;
 		font-family: 'IBM Plex Mono', monospace;
 		font-size: 4rem;
 		letter-spacing: 5px;
@@ -309,7 +312,7 @@ i {
 	justify-content: space-around;
 	width: 100%;
 	max-width: 800px;
-	margin: auto;
+
 	align-items: center;
 	flex-wrap: wrap;
 
@@ -326,9 +329,7 @@ i {
 			width: 5rem;
 			height: 5rem;
 		}
-	// 	@media (max-width:700px) {
-	// }
-		
+
 		.icon__image {
 			
 			position: absolute;
@@ -354,13 +355,4 @@ i {
 			font-family: 'IBM Plex Mono', monospace;
 		}
 	}
-}
-.scroll-padding {
-
-	position: relative;
-	span {
-		position: absolute;
-		top:-10vh;
-	}
-
 }
