@@ -1,14 +1,16 @@
 // import sal from "sal.js";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+
 import openAnimation from "./intro-animation.js";
 const button = document.querySelector(".jumbotron__content__button");
-const addButtonStyle = "border 0.5s ease, background 0.5s ease !important";
 const planet = document.getElementsByClassName('planet')[0]
 
 
 window.onload = function () {
   setTimeout(() => {
     openAnimation(() => {
-      // sal({threshold:0.1,once:true});
+      AOS.init({duration:2000,mirror:true,offset:120});
       button.style.transition =
         getComputedStyle(document.querySelector(".jumbotron__content__button"))
           .transition +
