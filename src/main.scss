@@ -353,3 +353,32 @@ i {
 		letter-spacing: 4px;
 	}
 }
+
+.government {
+	height:20rem;
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	.description {
+		h1 {
+			font-size: 5rem;
+			letter-spacing: 4px;
+		}
+		p {
+			font-size: 2rem;
+		}
+		max-width: 50vw;
+		margin:3rem;
+		display: flex;
+		flex-direction: column;
+	}
+	img {
+		width:50vw;
+		opacity: 0.9;
+		box-shadow: 18px 20px 12px -11px rgba(0,0,0,0.75);
+	}
+
+
+}

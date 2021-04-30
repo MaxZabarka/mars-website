@@ -9,8 +9,8 @@ window.addEventListener("scroll", () => {
 })
 const updateParallax = () =>  {
   // document.body.style.backgroundPosition = "center "+ window.scrollY/ getScrollMaxY()*100+"%"
-  planetElement.style.top = "-"+window.scrollY/ getScrollMaxY()*500+"px"
-  backgroundElement.style.top = "-"+window.scrollY/ getScrollMaxY()*300+"px"
+  planetElement.style.top = "-"+window.scrollY/ getScrollMaxY()*100+"px"
+  backgroundElement.style.top = "-"+window.scrollY/ getScrollMaxY()*50+"px"
 
   console.log(window.scrollY/ getScrollMaxY());
   // requestAnimationFrame(updateParallax)
