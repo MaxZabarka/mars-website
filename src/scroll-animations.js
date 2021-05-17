@@ -10,7 +10,7 @@ const planet = document.getElementsByClassName('planet')[0]
 window.onload = function () {
   setTimeout(() => {
     openAnimation(() => {
-      AOS.init({duration:2000,mirror:true,offset:120});
+      AOS.init({duration:2000,mirror:true,offset:120,once:true});
       button.style.transition =
         getComputedStyle(document.querySelector(".jumbotron__content__button"))
           .transition +

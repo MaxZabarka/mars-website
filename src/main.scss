@@ -353,9 +353,11 @@ i {
     letter-spacing: 4px;
   }
 }
-
+.muted {
+  opacity:0.8;
+}
 .government {
-  margin-top: 35rem;
+  margin-bottom: 20vh;
   width: 100vw;
   height:100vh;
   display: flex;
